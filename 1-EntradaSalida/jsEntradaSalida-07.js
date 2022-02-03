@@ -52,7 +52,14 @@ function multiplicar()
 
 function dividir()
 {
-	
-	
+	var division;
+
+	numerouno = document.getElementById("txtIdNumeroUno").value;
+
+	numerodos = document.getElementById("txtIdNumeroDos").value;
+
+	division = numerouno / numerodos;
+
+	alert("La division es " + division);
 }
 
