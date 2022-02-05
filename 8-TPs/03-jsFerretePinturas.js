@@ -4,29 +4,30 @@ B.	Al ingresar una temperatura en Centígrados debemos mostrar la temperatura en
 */
 function FahrenheitCentigrados () 
 {
-	var temperatura;
-    var fahrenheitacentigrados; //cambiar temperatura por fahrenheit y fahrenheitcentigrados por centigrados. agragar var mensaje
+	var fahrenheit;
+    var centigrados; //cambiar temperatura por fahrenheit y fahrenheitcentigrados por centigrados
 
-    temperatura = document.getElementById("txtIdTemperatura").value;
+    fahrenheit = document.getElementById("txtIdTemperatura").value;
 
-    temperatura = parseFloat(temperatura);
+    fahrenheit = parseFloat(fahrenheit);
 
-    fahrenheitacentigrados = (temperatura - 32) / 1.8 ;
+    centigrados = (fahrenheit - 32) / 1.8 ;
 
-    alert(temperatura + " Fahrenheit son " + fahrenheitacentigrados.toFixed(2) + " Centigrados");
+    alert(fahrenheit + " Fahrenheit son " + centigrados.toFixed(2) + " Centigrados");
 
 }
 
 function CentigradosFahrenheit () 
 {
-	var centigradosafahrenheit;
+	var centigrados;
+    var fahrenheit;
 
-    temperatura = document.getElementById("txtIdTemperatura").value;
+    centigrados = document.getElementById("txtIdTemperatura").value;
 
-    temperatura = parseFloat(temperatura);
+    centigrados = parseFloat(centigrados);
 
-    centigradosafahrenheit = temperatura * 1.8 + 32 ;
+    fahrenheit = centigrados * 1.8 + 32 ;
 
-    alert(temperatura + " Centigrados son " + centigradosafahrenheit + " fahrenheit");
+    alert(centigrados + " Centigrados son " + fahrenheit + " fahrenheit");
 
 }

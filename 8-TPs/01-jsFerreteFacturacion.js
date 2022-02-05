@@ -48,7 +48,7 @@ function Promedio ()
 
     promedio = sumatotal / 3 ;
 
-    alert("El promedio es " + promedio);
+    alert("El promedio es " + promedio.toFixed(2));
 }
 function PrecioFinal () 
 {

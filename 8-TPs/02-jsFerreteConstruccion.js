@@ -65,8 +65,8 @@ function Materiales ()
         bolsaDeCal= areaDelTerreno * 3;
          //console.log(bolsaDeCal, bolsaDeCemento);
     
-         mensaje = "la cantidad de bolsas de cemento a comprar son " + bolsaDeCemento; 
-         mensaje += " y la cantidad de bolsas de cal a comprar son " + bolsaDeCal;
+         mensaje = "La cantidad de bolsas de cemento a comprar son " + bolsaDeCemento; 
+         mensaje = " y la cantidad de bolsas de cal a comprar son " + bolsaDeCal;
     
         alert(mensaje);
      }
