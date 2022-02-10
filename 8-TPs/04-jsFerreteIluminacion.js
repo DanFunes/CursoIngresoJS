@@ -12,18 +12,78 @@ function CalcularPrecio ()
 {
     var cantidadLamparas;
     var preciototalDescuento;
+    var marcaLampara;
+    var precioTotal;
+    var precio;
+    var precioImpuesto;
+    var iibb;
 
     cantidadLamparas = document.getElementById("txtIdCantidad").value;
     cantidadLamparas = parseInt(cantidadLamparas);
+    precioTotal = 0;
+    precio = 35;
+    marcaLampara = document.getElementById("Marca").value; 
 
-    if (cantidadLamparas > 5){
+   //A
 
-        preciototalDescuento = (cantidadLamparas * 35) * 0.5;
-
+    if (cantidadLamparas > 5)
+    {
+        preciototalDescuento = precio * cantidadLamparas * 0.5;
     }
-     else ( cantidadLamparas < 6 )
-     {
-         preciototalDescuento = cantidadLamparas * 35;
-     } document.getElementById("txtIdprecioDescuento").value = preciototalDescuento
+    
+    //B
 
-}
+    if(cantidadLamparas == 5)
+    {
+        if (marcaLampara == "ArgentinaLuz") 
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.6;
+        }
+        else
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.7;
+        }
+    } 
+
+    //C 
+
+    if (cantidadLamparas == 4)
+    {
+        if (marcaLampara == "ArgentinaLuz" || marcaLampara == "FelipeLamparas") 
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.75;
+        }
+        else 
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.8;
+        }
+    } 
+
+    //D
+
+    if (cantidadLamparas == 3)
+    {
+        if ( marcaLampara == "ArgentinaLuz")
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.85;
+        }
+        else if (marcaLampara == "FelipeLamparas")
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.90;
+        }
+        else 
+        {
+            preciototalDescuento = precio * cantidadLamparas * 0.95;
+        }
+    } document.getElementById("txtIdprecioDescuento").value= preciototalDescuento;
+
+    //E
+
+    if (preciototalDescuento > 120)
+    {
+        iibb = preciototalDescuento * 0.10;
+        precioImpuesto = preciototalDescuento + iibb;
+        alert("IIBB Usted pago " + precioImpuesto + ", siendo " + iibb + " el impuesto que se pago.")
+    }
+
+} 
