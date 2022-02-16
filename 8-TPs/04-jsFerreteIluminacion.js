@@ -11,6 +11,72 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
 function CalcularPrecio () 
 {
     var cantidadLamparas;
+    var marcaLampara;
+    var precio;
+    var precioTotalDescuento;
+    var iibb;
+    var precioImpuesto;
+    
+    cantidadLamparas = document.getElementById("txtIdCantidad").value;
+    cantidadLamparas = parseInt(cantidadLamparas);
+    precio = 35;
+    marcaLampara = document.getElementById("Marca").value;
+
+    switch (cantidadLamparas) {
+        case 1:
+        case 2:
+            precioTotalDescuento = precio * cantidadLamparas ;
+            break;
+        case 3:
+            switch(marcaLampara) {
+                case "ArgentinaLuz":
+                    precioTotalDescuento = precio * cantidadLamparas * 0.85 ;
+                    break;
+                case "FelipeLamparas":
+                    precioTotalDescuento = precio * cantidadLamparas * 0.90 ;
+                    break;
+                default:
+                    precioTotalDescuento = precio * cantidadLamparas * 0.95 ;
+                    break;
+                
+            } break;
+        case 4:
+                switch (marcaLampara) {
+                    case "ArgentinaLuz":
+                    case "FelipeLamparas":
+                        precioTotalDescuento = precio * cantidadLamparas * 0.75 ;
+                        break;
+                    default:
+                        precioTotalDescuento = precio * cantidadLamparas * 0.80 ;
+                        break;
+                }break;
+        case 5:
+            switch (marcaLampara) {
+                case "ArgentinaLuz":
+                precioTotalDescuento = precio * cantidadLamparas * 0.6 ;
+                break;
+            default:
+                precioTotalDescuento = precio * cantidadLamparas * 0.7 ;
+                break;
+        }break;
+        default:
+            precioTotalDescuento = precio * cantidadLamparas * 0.5;
+            break;
+        }
+    
+    document.getElementById("txtIdprecioDescuento").value=precioTotalDescuento;
+
+    if (precioTotalDescuento > 120)
+    {
+        iibb = precioTotalDescuento * 0.10;
+        precioImpuesto = precioTotalDescuento + iibb;
+        alert("IIBB Usted pago " + precioImpuesto + ", siendo " + iibb + " el impuesto que se pago.")
+    }
+
+}
+/*
+{
+    var cantidadLamparas;
     var preciototalDescuento;
     var marcaLampara;
     var precioTotal;
@@ -86,4 +152,4 @@ function CalcularPrecio ()
         alert("IIBB Usted pago " + precioImpuesto + ", siendo " + iibb + " el impuesto que se pago.")
     }
 
-} 
+} */
