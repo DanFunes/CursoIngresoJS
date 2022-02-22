@@ -7,10 +7,28 @@ function mostrar()
 	var respuesta;
 	var sumaPositivos;
 	var multiplicacionNegativos;
+	var numero;
+
 	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta='si';
+
+	while(respuesta == "si")
+	{
+		numero = parseInt(prompt("Ingrese un numero: "));
+
+		if(numero > 0)
+		{
+			sumaPositivos = sumaPositivos + numero;
+		}
+		else
+		{
+			multiplicacionNegativos = multiplicacionNegativos * numero;
+		}
+
+		respuesta = prompt("Quiere agregar otro numero? ");
+	}
 
 
 	txtIdSuma.value=sumaPositivos;

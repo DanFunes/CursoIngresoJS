@@ -1,3 +1,4 @@
+/*
 function mostrar()
 {
 	var edad;
@@ -85,4 +86,75 @@ function mostrar()
 
 }
 
-//FIN DE LA FUNCIÓN
+//FIN DE LA FUNCIÓN */
+
+function mostrar ()
+{
+	var edad;
+	var mensaje;
+	var nombre;
+
+	nombre = prompt("Decime tu nombre", "");
+	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
+
+	if(edad < 13)
+	{
+		mensaje = " Feliz dia";
+
+		if(nombre == "Ricardo")
+		{
+			mensaje = mensaje + ", muy chiquito para ese nombre";
+		}
+	}
+	else
+	{
+		if(edad < 18)
+		{
+			mensaje = " Usted es adolecente";
+
+			if(nombre == "Violeta")
+		{
+			mensaje = mensaje + ", como un color";
+		}
+
+			if(edad ==17 )
+			{
+				mensaje = mensaje + " ultimo año!!!";
+
+			}
+		}
+		else
+		{
+			mensaje = " Tenes edad de laburar";
+
+			if(edad == 33)
+			{
+				mensaje = mensaje + " Como cristo";
+			}
+			else
+			{
+				if (edad > 60)
+				{
+					mensaje = mensaje + " a jubilarse";
+
+					if(nombre == "Alfredo")
+					{
+						mensaje = mensaje + ", como el de QUEEN";
+					}
+					
+					if(edad == 88)
+					{
+						mensaje = mensaje + " Lindo numero"
+					}
+				}
+			}
+			
+		}
+	}
+
+	if (edad % 2 === 0)
+	{
+		mensaje = mensaje + ", sos par!!";
+	}
+}
